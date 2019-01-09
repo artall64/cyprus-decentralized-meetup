@@ -158,16 +158,15 @@ History is growing too fast; it's not possible to store the history on the light
 
 
 ---
-### Plasma Prime - Cashflow with history reduction on RSA Accumulators
+### Plasma Prime - Cashflow with history reduction using RSA Accumulators
 - Slices instead of unique coins(plasma cash), similar to plasma debit
 - End-user needs to observe only slices that he owns
 - The introduced idea of history compression by generation proof of exclusion of slice to a range of blocks `1) Assign a prime number to slice 2) When ever slice modification assign a new prime number to slice and put it into the accumulator.`
 - Proof of exclusion requires less space than full history
-- Requires to expensive computations `After implementing a proof of concept, BANKEX Foundation research team find out that existing RSA Accumulator is a bottleneck that we can't pass at the moment.`
- :snowflake:
+- Requires to expensive computations `After implementing a proof of concept, BANKEX Foundation research team find out that existing RSA Accumulator is a bottleneck that we can't pass at the moment.` :snowflake:
 
 ---
-### Plasma Cashflow with history reduction on zkSNARKS
+### Plasma Cashflow with history reduction using zkSNARKS
 - The same idea as Plasma Prime, we fix a problem, by replacing RSA Accumulator with zkSNARK proof of exclusion
 - Working solution that fixes the problem of extensively growing history. :thumbsup:
 - The user should only store the compressed history of his own coins. About 1 - 10 Mb for the small amount of Ether. :thumbsup:
@@ -195,5 +194,13 @@ Chuck likes Plasma,
 But he no needs it to speedup Ethereum
 
 ---
-#### Questions
-BUTTON Wallet with 0.16 ETH fo the best question
+## Questions
+BUTTON Wallet with 20$ ETH for the best question. 
+<img src='https://artall64.github.io/cyprus-decentralized-meetup/question-reward-qr.png' rel='nofollow' alt='qr code'><a href='http://www.qrcode-generator.de' border='0' style='cursor:default'  rel='nofollow'></a>
+Scan and import it to @buttonwalletbot in telegram
+
+---
+<p align="center">That presentaion on the Github</p>
+<p align="center"><img src='https://artall64.github.io/cyprus-decentralized-meetup/github-link.png' alt='qr code'></p>
+
+<p align="center">Done with <a href="https://yhatt.github.io/marp/">Marp</a>, amazing markdown to presentation  writer</p>
