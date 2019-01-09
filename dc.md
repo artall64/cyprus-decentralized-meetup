@@ -191,7 +191,7 @@ Proof of concept is implemented by barryWhiteHat ([Github](https://github.com/ba
 <img src='https://imgflip.com//s/meme/Chuck-Norris-Approves.jpg' rel='nofollow' alt='qr code'><a href='http://www.qrcode-generator.de' border='0' style='cursor:default'  rel='nofollow'></a>
 
 Chuck likes Plasma, 
-But he no needs it to speedup Ethereum
+But he doesn't need it to speed up Ethereum
 
 ---
 ## Questions
