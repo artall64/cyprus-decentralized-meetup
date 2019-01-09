@@ -195,9 +195,9 @@ But he no needs it to speedup Ethereum
 
 ---
 ## Questions
-BUTTON Wallet with 20$ ETH for the best question. 
+BUTTON Wallet with 20$ in ETH for the best question. 
 <img src='https://artall64.github.io/cyprus-decentralized-meetup/question-reward-qr.png' rel='nofollow' alt='qr code'><a href='http://www.qrcode-generator.de' border='0' style='cursor:default'  rel='nofollow'></a>
-Scan and import it to @buttonwalletbot in telegram
+Take a picture of QR, than import it to @buttonwalletbot in telegram
 
 ---
 <p align="center">That presentaion on the Github</p>
