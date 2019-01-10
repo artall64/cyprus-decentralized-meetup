@@ -52,9 +52,9 @@
 ---
 
 # Key components
-- Plasma Smart Contract<br>`Bridge between main net and side-chain. Gives security guarantees for the users`<br>
-- Plasma Operator <br>`Centralized block producer that assemble blocks side chain with a speed of lite and publish block headers to the Smart Contract.`
-- Client app & Plasma Validator <br>`Deposits, transfers, exits and withdraw on plasma side-chain. As validator constantly stay online and monitor side chain blocks, ready to start exit if the operator makes a double spend, block withholding by any reason.`
+- <b>Plasma Smart Contract</b><br>`Bridge between main net and side-chain. Gives security guarantees for the users`<br>
+- <b>Plasma Operator</b><br>`Centralized block producer that assemble blocks side chain with a speed of lite and publish block headers to the Smart Contract.`
+- <b>Client app & Plasma Validator</b> <br>`Deposits, transfers, exits and withdraw on plasma side-chain. As validator constantly stay online and monitor side chain blocks, ready to start exit if the operator makes a double spend, block withholding by any reason.`
 <br/>
 
 ---
@@ -62,15 +62,14 @@
 - Speedup Ethereum to the speed of light or at least 50 - 1000 times
 - Tremendously reduce a transaction price ~0.0001$
 - Support fungible ERC20 and non-fungible ERC721 deposits and exchange
-- Potentially suites for any Blockchain with turning complete smart contracts
-- Potentially support smart contracts inside of side-chain 
+- Potentially suites for any Blockchain with turning complete smart contracts, smart contracts inside of side-chain...
 ---
 
-# With one clarification - it depends on plasma
+# With one clarification - "it depends"
 - Speedup Ethereum to to speed of light or at least 50 - 1000 times <b style="color:red">*depends on plasma design*</b>
 - Tremendously reduce a transaction price ~0.0001$ <b style="color:red">*depends on plasma design*</b>
 - Support fungiable ERC20 and non-fungiable ERC721 deposits and exchange <b style="color:red">*depends on plasma  design*</b>
-- Potentially suites for any Blockchaint with turing compleat smart contracts <b style="color:red">*depends on plasma  design*</b>
+- Potentially suites for any Blockchaint with turing compleat smart contracts <b style="color:red">*it depends on ....*</b>
 
 ---
 <p align="center"><img src='https://imgflip.com/s/meme/Jackie-Chan-WTF.jpg' rel='nofollow' alt='qr code'><a href='http://www.qrcode-generator.de' border='0' style='cursor:default'  rel='nofollow'></a></p>
@@ -92,23 +91,19 @@
 </div>
 
 ---
-# UTXO vs Account Based
+# UTXO vs Account Based Plasma
 
-Note: `UTXO model - like bitcoin.`
-Note: `Account based model - like ethereum. `
 - UTXO based 
-    - Merkle Trees 
-    - Growing history problem
-    - Someone needs to stay online and watch on what operator do
+    - Like bitcoin
+    - ........
 - Account based
-    - Requires zero-knowledge proofs to change sate
-    - Requires extensive computation on the operator
-    - Requires trusted setup
-    - Consume more space in the block on the main net
+    - Like Ethereum
+    - Uses verifiable computations for state change mutation verification (zero-knowledge proofs)
+    - ..........
 
 ---
 # UTXO based
-- <b>Merkle Trees</b> `operator publish root hash on the main net`
+- <b>Merkle Trees</b> `Operator publish root hash on the main net`
 - <b>Growing history problem</b> `Validator should keep full history, to win exit game. Since speed is high history growing tremendously. Can be solved by history  compression based on RSA accumulators or zkSNARK/zkSTARK.`
  - <b>Some one need to stay online</b> `and checks what operator publish, to trigger own exits and challenge exits of other participants`
 
@@ -116,7 +111,7 @@ Note: `Account based model - like ethereum. `
 # Account based, e.g. rollup
 - <b>Requires zero-knowledge proofs to change sate</b> `Smart contract accepts only valid 'state transition' by checking proof that operator publish. The operator can't publish wrong blocks. Checking is cheap and can be done on smart contract`
 - <b>Requires extensive computation on operator </b>`It's hard to generate zero-knowledge proof`
-- <b>Requires trusted setup</b> `(only for zkSNARKS). Ethereum can provide required features.`
+- <b>Requires trusted setup</b> `(for zkSNARKS). Ethereum can provide required features.`
 - <b>Consume more space in the block on the mainnet</b> `Operator also publishes transaction fingerprint.`
 ---
 
@@ -148,8 +143,9 @@ History is growing to fast, in one year it's not possible to store it on the ser
 ---
 ### Plasma Cash
 - Easy to implement :thumbsup:
+- User track only his own coin :thumbsup: 
 - Doesn't have minimal viable plasma vulnerability :thumbsup:
-- Only non-fungible assets e.g ERC721 tokens :thumbsdown:
+- Suites well only non-fungible assets e.g ERC721 tokens :thumbsdown:
 <br>
 #### :no_entry_sign: Showstopper:
 History is growing too fast; it's not possible to store the history on the light client, e.g. mobile client
@@ -190,8 +186,7 @@ Proof of concept is implemented by barryWhiteHat ([Github](https://github.com/ba
 # Thanks
 <img src='https://imgflip.com//s/meme/Chuck-Norris-Approves.jpg' rel='nofollow' alt='qr code'><a href='http://www.qrcode-generator.de' border='0' style='cursor:default'  rel='nofollow'></a>
 
-Chuck likes Plasma, 
-But he doesn't need it to speed up Ethereum
+Chuck likes Plasma!
 
 ---
 ## Questions
