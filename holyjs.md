@@ -34,7 +34,9 @@
 ## 1. Транзакции запускают код в машине 
 ## 2. Код меняет `state` машины
 ## 3. `state` хранит что угодно
+
 ---
+
 # Ethereum — за все надо платить эфиром
 ## 1. `MOV ADD XOR AND ...` у всего есть цена в `Gas Units`
 ## 2. Лимит элементарных операций на тразакцию и блок
@@ -121,4 +123,40 @@
 ## • [Compound](https://compound.finance/)
 ## • [1inch](https://app.1inch.io/), все это dApp
 
-# Посмотрим как они устроены - Go to Часть 2
+---
+
+TODO: картинка с карлосоном
+
+---
+# Посмотрим как устроены dApp
+
+---
+
+![alt cant-justpng](images/evm.png)
+
+---
+
+![alt cant-justpng](images/evm2.png)
+
+---
+
+![alt cant-justpng](images/evm3.png)
+
+---
+
+![alt cant-justpng](images/evm4.png)
+
+---
+
+# 1) View режим
+# До того как кошелек подключен
+
+---
+
+![alt cant-justpng](images/evm5.png)
+
+---
+
+![alt cant-justpng](images/evm6.png)
+
+---
