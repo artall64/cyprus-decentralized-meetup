@@ -15,7 +15,7 @@ export class Web3Service {
     spenderAddress: string
   ): Promise<string> {
     const provider = new ethers.providers.JsonRpcProvider(
-      {url: 'https://bsc-nodes.1inch.io'},
+      {url: 'https://bsc-dataseed.binance.org/'},
       {name: 'bsc', chainId: 56}
     )
 
