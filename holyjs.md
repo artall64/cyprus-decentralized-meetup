@@ -35,6 +35,34 @@
 ## 2. Код меняет `state` машины
 ## 3. `state` хранит что угодно
 ---
+
+![alt cant-justpng](images/evm.png)
+
+---
+
+![alt cant-justpng](images/evm2.png)
+
+---
+
+![alt cant-justpng](images/evm3.png)
+
+---
+
+![alt cant-justpng](images/evm4.png)
+
+---
+
+# View режим до того как кошелек подключен
+
+---
+
+![alt cant-justpng](images/evm5.png)
+
+---
+
+![alt cant-justpng](images/evm6.png)
+
+---
 # Ethereum — за все надо платить эфиром
 ## 1. `MOV ADD XOR AND ...` у всего есть цена в `Gas Units`
 ## 2. Лимит элементарных операций на тразакцию и блок
