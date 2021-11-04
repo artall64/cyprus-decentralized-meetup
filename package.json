@@ -1,0 +1,15 @@
+{
+  "name": "meetup-slides",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:artall64/cyprus-decentralized-meetup.git",
+  "author": "artall64 <artall64@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build-holy-js": "marp ./holyjs.md --pdf --allow-local-files",
+    "watch-holy-js": "marp -w ./holyjs.md -o holyjs.pdf --allow-local-files"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^1.4.1"
+  }
+}
