@@ -87,7 +87,7 @@
 ## • Контракт и транзакции останутся в истории навсегда
 
 ---
-# Image - go deeper from из фильма с дикаприо
+![alt pending.png](images/pending.png)
 
 ---
 # Смарт контракты могут работать сообща
@@ -124,26 +124,26 @@
 
 ---
 
-TODO: картинка с карлосоном
+![alt carlson-mem](images/carlson-mem.png)
 
 ---
 # Посмотрим как устроены dApp
 
 ---
 
-![alt cant-justpng](images/evm.png)
+![alt evm](images/evm.png)
 
 ---
 
-![alt cant-justpng](images/evm2.png)
+![alt evm2](images/evm2.png)
 
 ---
 
-![alt cant-justpng](images/evm3.png)
+![alt evm3](images/evm3.png)
 
 ---
 
-![alt cant-justpng](images/evm4.png)
+![alt evm4](images/evm4.png)
 
 ---
 
@@ -188,3 +188,5 @@ TODO: картинка с карлосоном
 ## ![alt wallet4](images/wallet4.png)
 
 ---
+
+## ![alt jeky](images/jeky.png)
