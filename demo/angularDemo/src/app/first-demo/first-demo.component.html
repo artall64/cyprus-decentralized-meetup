@@ -16,7 +16,7 @@
         0x6Ab9c477246bCaa4A1C3a825F42437EF66c55953
       </a>
     </p>
-    <input type="text" class="field-input">
+    <input type="text" class="field-input" [formControl]="userAddressControl">
   </div>
 
   <div class="field-wrap">
@@ -28,7 +28,7 @@
         0xe9e7cea3dedca5984780bafc599bd69add087d56 (BUSD)
       </a>
     </p>
-    <input type="text" class="field-input">
+    <input type="text" class="field-input" [formControl]="tokenAddressControl">
   </div>
 
   <div class="field-wrap">
@@ -39,7 +39,7 @@
     </a>
   </div>
 
-  <button class="button">Get allowance</button>
+  <button class="button" (click)="getAllowance()">Get allowance</button>
 
   <div class="result-wrap">
     <span class="result-label">Allowance:</span>

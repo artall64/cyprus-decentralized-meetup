@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
@@ -12,6 +13,7 @@ import { SecondDemoComponent } from './second-demo/second-demo.component';
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
+    ReactiveFormsModule,
   ],
   exports: [FirstDemoComponent, SecondDemoComponent],
   providers: [],

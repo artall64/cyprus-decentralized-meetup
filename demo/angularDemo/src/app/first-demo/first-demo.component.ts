@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-first-demo',
@@ -6,5 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./first-demo.component.scss']
 })
 export class FirstDemoComponent {
-  //
+  readonly userAddressControl = new FormControl();
+
+  readonly tokenAddressControl = new FormControl();
+
+  getAllowance(): void {
+    console.log(this.userAddressControl.value, this.tokenAddressControl.value);
+  }
 }
