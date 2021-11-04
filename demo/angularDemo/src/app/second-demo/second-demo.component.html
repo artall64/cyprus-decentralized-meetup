@@ -1,1 +1,50 @@
-<p>second-demo</p>
+<div class="page-content">
+  <div class="field-wrap">
+    <p class="field-label">Network ID</p>
+    <p class="field-value">
+      <span>56 -</span>
+      <a class="link" target="_blank" href="https://bscscan.com/">Binance Smart Chain</a>
+    </p>
+  </div>
+
+  <div class="field-wrap">
+    <ng-container *ngIf="!isWalletConnected">
+      <button class="button" (click)="connectWallet()">Connect wallet</button>
+    </ng-container>
+
+    <ng-container *ngIf="isWalletConnected">
+      <p class="field-label">Your address</p>
+      <p class="field-label">0x111111</p>
+      <button class="button" (click)="disconnectWallet()">Disconnect wallet</button>
+    </ng-container>
+  </div>
+
+  <div class="field-wrap">
+    <p class="field-label">Enter token address</p>
+    <p class="field-sub-label">
+      <span>Example:</span>
+      <a class="link" target="_blank"
+         href="https://bscscan.com/address/0xe9e7cea3dedca5984780bafc599bd69add087d56">
+        0xe9e7cea3dedca5984780bafc599bd69add087d56 (BUSD)
+      </a>
+    </p>
+    <input type="text" class="field-input" [formControl]="tokenAddressControl">
+  </div>
+
+  <div class="field-wrap">
+    <p class="field-label">Place spender contract address (1inch router V3)</p>
+    <a class="field-value link" target="_blank"
+       href="https://bscscan.com/address/0x11111112542d85b3ef69ae05771c2dccff4faa26">
+      0x11111112542d85b3ef69ae05771c2dccff4faa26
+    </a>
+  </div>
+
+  <button class="button" (click)="getAllowance()">Get allowance</button>
+
+  <div class="result-wrap">
+    <span class="result-label">Allowance:</span>
+    <span class="result-value">123</span>
+  </div>
+
+  <button class="button" (click)="setAllowance()">Set allowance</button>
+</div>
