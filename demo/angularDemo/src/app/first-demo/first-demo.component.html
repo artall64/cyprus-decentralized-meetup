@@ -41,8 +41,12 @@
 
   <button class="button" (click)="getAllowance()">Get allowance</button>
 
-  <div class="result-wrap">
-    <span class="result-label">Allowance:</span>
-    <span class="result-value">123</span>
+  <div *ngIf="allowanceAmount$ | async" class="result-wrap">
+    <span class="result-label">Allowance: </span>
+    <span class="result-value">{{allowanceAmount$ | async}}</span>
+  </div>
+
+  <div class="error-wrap" *ngIf="error$ | async">
+    <p>Check address fields</p>
   </div>
 </div>

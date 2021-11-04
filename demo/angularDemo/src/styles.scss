@@ -91,3 +91,12 @@ p {
 .result-wrap {
   margin-top: 32px;
 }
+
+.result-value {
+  word-break: break-all;
+}
+
+.error-wrap {
+  color: #E3402A;
+  margin-top: 32px;
+}
