@@ -6,14 +6,13 @@ import { ethers } from 'ethers';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   readonly allowanceAmount$ = new BehaviorSubject<string>('');
 
   readonly error$ = new BehaviorSubject<string>('');
 
-  readonly userAddressControl = new FormControl(' 0x6Ab9c477246bCaa4A1C3a825F42437EF66c55953');
+  readonly userAddressControl = new FormControl('0x6Ab9c477246bCaa4A1C3a825F42437EF66c55953');
 
   readonly tokenAddressControl = new FormControl('0xe9e7cea3dedca5984780bafc599bd69add087d56');
 
