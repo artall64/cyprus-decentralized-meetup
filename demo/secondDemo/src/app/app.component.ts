@@ -1,5 +1,4 @@
 import { Component, NgZone, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ethers } from 'ethers';
@@ -30,7 +29,7 @@ const networksRpc = {
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
-  readonly tokenAddressControl = new FormControl('0xe9e7cea3dedca5984780bafc599bd69add087d56');
+  readonly tokenAddress$ = new BehaviorSubject('0xe9e7cea3dedca5984780bafc599bd69add087d56');
 
   readonly spenderAddress$ = new BehaviorSubject('0x11111112542d85b3ef69ae05771c2dccff4faa26');
 
@@ -131,7 +130,7 @@ export class AppComponent implements OnInit {
     const provider = this.ethersProvider;
     const spenderAddress = this.spenderAddress$.value;
     const walletAddress = this.walletAddress$.value;
-    const tokenAddress = this.tokenAddressControl.value;
+    const tokenAddress = this.tokenAddress$.value;
 
     const abi = ['function allowance(address, address) view returns (uint)'];
     const signer = new ethers.VoidSigner(walletAddress, provider);
@@ -145,7 +144,7 @@ export class AppComponent implements OnInit {
     const amount = '25000000000000000000';
     const spenderAddress = this.spenderAddress$.value;
     const walletAddress = this.walletAddress$.value;
-    const tokenAddress = this.tokenAddressControl.value;
+    const tokenAddress = this.tokenAddress$.value;
 
     const abi = ['function approve(address spender, uint256 amount)'];
     const iface = new ethers.utils.Interface(abi);

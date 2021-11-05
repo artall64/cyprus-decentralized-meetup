@@ -19,18 +19,15 @@
   </div>
 
   <div class="field-wrap">
-    <p class="field-label">Enter token address</p>
-    <p class="field-sub-label">
-      <span>Example:&nbsp;</span>
-      <a class="link" target="_blank"
-         href="https://bscscan.com/address/0xe9e7cea3dedca5984780bafc599bd69add087d56"
-      >0xe9e7cea3dedca5984780bafc599bd69add087d56 (BUSD)</a>
-    </p>
-    <input type="text" class="field-input" [formControl]="tokenAddressControl">
+    <p class="field-label">Token address</p>
+    <a class="field-value link" target="_blank"
+       href="https://bscscan.com/address/{{tokenAddress$ | async}}">
+      {{tokenAddress$ | async}}
+    </a>
   </div>
 
   <div class="field-wrap">
-    <p class="field-label">Place spender contract address (1inch router V3)</p>
+    <p class="field-label">Spender contract address (1inch router V3)</p>
     <a class="field-value link" target="_blank"
        href="https://bscscan.com/address/{{spenderAddress$ | async}}">
       {{spenderAddress$ | async}}
@@ -40,12 +37,19 @@
   <button class="button" (click)="loadAllowance()">Get allowance</button>
 
   <div class="result-wrap">
-    <span class="result-label">Allowance:</span>
+    <span class="result-label">Allowance: </span>
     <span *ngIf="allowanceLoadingInProgress" class="result-value">Loading...</span>
     <span *ngIf="!allowanceLoadingInProgress" class="result-value">{{allowanceAmount$ | async}}</span>
   </div>
 
   <button class="button" (click)="setAllowance()">Set allowance</button>
 
-  <span *ngIf="(approveTxHash$ | async) as approveTxHash">{{approveTxHash}}</span>
+  <div class="result-wrap">
+    <span class="result-label">Tx hash: </span>
+    <a *ngIf="(approveTxHash$ | async) as approveTxHash"
+       target="_blank"
+       [href]="'https://bscscan.com/tx/' + approveTxHash">
+      <span>{{approveTxHash}}</span>
+    </a>
+  </div>
 </div>
