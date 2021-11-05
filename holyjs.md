@@ -37,6 +37,8 @@
 ## • Экосистема протоколов / смарт контрактов
 
 ---
+## ![alt cant-justpng](images/1inch-stats.png)
+---
 
 ## ![alt cant-justpng](images/box.png)
 ---
@@ -51,7 +53,11 @@
 # Ethereum — за все надо платить эфиром
 ## 1. `MOV ADD XOR AND ...` у всего есть цена в `Gas Units`
 ## 2. Лимит элементарных операций на тразакцию и блок
-## 3. Концепт газа: `Gas Units * Gas Price`
+## 3. Концепт газа: `Gas Units * Gas Price` (п)
+
+---
+## ![alt cant-justpng](images/gas-price.png)
+
 ---
 + Газ прайс - наглядность (приложить дорогую транзакцию) и Yellow paper
 ---
