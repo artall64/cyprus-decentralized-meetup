@@ -91,35 +91,15 @@ export class AppComponent implements OnInit {
     // window.ethereum - our RPC & Wallet endpoint
 
     // TODO: 1 Ask for current address
-    window.ethereum.request<string[]>({method: 'eth_requestAccounts'})
-      .then(accounts => {
-        this.walletAddress$.next(accounts[0]);
-      });
 
     // TODO:2 Subscribe on account changes
-    window.ethereum.on<string[]>('accountsChanged', accounts => {
-      this.ngZone.run(() => {
-        this.walletAddress$.next(accounts[0]);
-        console.log('Accounts changed: ', accounts[0]);
-      });
-    });
   }
 
   // TODO: get info about chain
   persistChainId() {
     // TODO: 1 Ask for current chaind
-    window.ethereum.request<string>({method: 'eth_chainId'})
-      .then(chainId => {
-        this.networkId$.next(+chainId);
-      });
 
     // TODO: 2 Subscribe on account changes
-    window.ethereum.on<string>('chainChanged', chainId => {
-      this.ngZone.run(() => {
-        this.networkId$.next(+chainId);
-        console.log('Chain changed: ', +chainId);
-      });
-    });
   }
 
   loadAllowance() {
@@ -138,12 +118,8 @@ export class AppComponent implements OnInit {
     const walletAddress = this.walletAddress$.value;
     const tokenAddress = this.tokenAddress;
 
-    const abi = ['function allowance(address, address) view returns (uint)'];
-    const signer = new ethers.VoidSigner(walletAddress, provider);
-    const contract = new ethers.Contract(tokenAddress, abi, signer);
-    const allowance: string = await contract.allowance(walletAddress, spenderAddress);
-
-    return ethers.utils.formatUnits(allowance, 18);
+    // TODO: implement
+    return Promise.resolve('');
   }
 
   setAllowance(): void {
@@ -152,24 +128,7 @@ export class AppComponent implements OnInit {
     const walletAddress = this.walletAddress$.value;
     const tokenAddress = this.tokenAddress;
 
-    const abi = ['function approve(address spender, uint256 amount)'];
-    const iface = new ethers.utils.Interface(abi);
-    const callData = iface.encodeFunctionData('approve', [
-      spenderAddress,
-      amount
-    ]);
-
-    const txConfig = {
-      gasPrice: String(2000000000),
-      from: walletAddress,
-      to: tokenAddress,
-      data: callData
-    };
-
-    window.ethereum.request<string>({method: 'eth_sendTransaction', params: [txConfig]})
-      .then(txHash => {
-        this.approveTxHash$.next(txHash);
-        console.log('Approve tx hash: ', txHash);
-      });
+    // TODO: implement
+    return;
   }
 }
