@@ -14,23 +14,22 @@
     <ng-container *ngIf="walletAddress$ | async">
       <p class="field-label">Your address</p>
       <p class="field-label">{{walletAddress$ | async}}</p>
-      <button class="button" (click)="disconnectWallet()">Disconnect wallet</button>
     </ng-container>
   </div>
 
   <div class="field-wrap">
     <p class="field-label">Token address</p>
     <a class="field-value link" target="_blank"
-       href="https://bscscan.com/address/{{tokenAddress$ | async}}">
-      {{tokenAddress$ | async}}
+       href="https://bscscan.com/address/{{tokenAddress}}">
+      {{tokenAddress}}
     </a>
   </div>
 
   <div class="field-wrap">
     <p class="field-label">Spender contract address (1inch router V3)</p>
     <a class="field-value link" target="_blank"
-       href="https://bscscan.com/address/{{spenderAddress$ | async}}">
-      {{spenderAddress$ | async}}
+       href="https://bscscan.com/address/{{spenderAddress}}">
+      {{spenderAddress}}
     </a>
   </div>
 

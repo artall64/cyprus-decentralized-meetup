@@ -24,17 +24,14 @@ const networksRpc = {
   10: 'https://optimism-nodes.1inch.io'
 }
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html'
-})
-export class AppComponent implements OnInit {
+// @Component({
+//   selector: 'app-root',
+//   templateUrl: './app.component.html'
+// })
+export class AppComponentFinal implements OnInit {
+  readonly tokenAddress$ = new BehaviorSubject('0xe9e7cea3dedca5984780bafc599bd69add087d56');
 
-  // BUSD token
-  readonly tokenAddress = '0xe9e7cea3dedca5984780bafc599bd69add087d56';
-
-  // 1inch V3 router contract
-  readonly spenderAddress = '0x11111112542d85b3ef69ae05771c2dccff4faa26';
+  readonly spenderAddress$ = new BehaviorSubject('0x11111112542d85b3ef69ae05771c2dccff4faa26');
 
   readonly walletAddress$ = new BehaviorSubject<string>('');
 
@@ -86,17 +83,12 @@ export class AppComponent implements OnInit {
     this.persistChainId();
   }
 
-  // TODO: get info about account
   connectWallet(): void {
-    // window.ethereum - our RPC & Wallet endpoint
-
-    // TODO: 1 Ask for current address
     window.ethereum.request<string[]>({method: 'eth_requestAccounts'})
       .then(accounts => {
         this.walletAddress$.next(accounts[0]);
       });
 
-    // TODO:2 Subscribe on account changes
     window.ethereum.on<string[]>('accountsChanged', accounts => {
       this.ngZone.run(() => {
         this.walletAddress$.next(accounts[0]);
@@ -105,15 +97,17 @@ export class AppComponent implements OnInit {
     });
   }
 
-  // TODO: get info about chain
+  disconnectWallet(): void {
+    this.walletAddress$.next('');
+    this.ethersProviderCache = {};
+  }
+
   persistChainId() {
-    // TODO: 1 Ask for current chaind
     window.ethereum.request<string>({method: 'eth_chainId'})
       .then(chainId => {
         this.networkId$.next(+chainId);
       });
 
-    // TODO: 2 Subscribe on account changes
     window.ethereum.on<string>('chainChanged', chainId => {
       this.ngZone.run(() => {
         this.networkId$.next(+chainId);
@@ -134,9 +128,9 @@ export class AppComponent implements OnInit {
 
   async getAllowance(): Promise<string> {
     const provider = this.ethersProvider;
-    const spenderAddress = this.spenderAddress;
+    const spenderAddress = this.spenderAddress$.value;
     const walletAddress = this.walletAddress$.value;
-    const tokenAddress = this.tokenAddress;
+    const tokenAddress = this.tokenAddress$.value;
 
     const abi = ['function allowance(address, address) view returns (uint)'];
     const signer = new ethers.VoidSigner(walletAddress, provider);
@@ -148,9 +142,9 @@ export class AppComponent implements OnInit {
 
   setAllowance(): void {
     const amount = '25000000000000000000';
-    const spenderAddress = this.spenderAddress;
+    const spenderAddress = this.spenderAddress$.value;
     const walletAddress = this.walletAddress$.value;
-    const tokenAddress = this.tokenAddress;
+    const tokenAddress = this.tokenAddress$.value;
 
     const abi = ['function approve(address spender, uint256 amount)'];
     const iface = new ethers.utils.Interface(abi);
