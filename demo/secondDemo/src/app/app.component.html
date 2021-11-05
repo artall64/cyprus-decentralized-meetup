@@ -1,0 +1,55 @@
+<div class="page-content">
+  <div class="field-wrap">
+    <p class="field-label">Network ID</p>
+    <p class="field-value">
+      <span>{{networkId$ | async}}&nbsp;-&nbsp;</span> <a class="link">{{networkName$ | async}}</a>
+    </p>
+  </div>
+
+  <div class="field-wrap">
+    <ng-container *ngIf="!(walletAddress$ | async)">
+      <button class="button" (click)="connectWallet()">Connect wallet</button>
+    </ng-container>
+
+    <ng-container *ngIf="walletAddress$ | async">
+      <p class="field-label">Your address</p>
+      <p class="field-label">{{walletAddress$ | async}}</p>
+      <button class="button" (click)="disconnectWallet()">Disconnect wallet</button>
+    </ng-container>
+  </div>
+
+  <div class="field-wrap">
+    <p class="field-label">Token address</p>
+    <a class="field-value link" target="_blank"
+       href="https://bscscan.com/address/{{tokenAddress$ | async}}">
+      {{tokenAddress$ | async}}
+    </a>
+  </div>
+
+  <div class="field-wrap">
+    <p class="field-label">Spender contract address (1inch router V3)</p>
+    <a class="field-value link" target="_blank"
+       href="https://bscscan.com/address/{{spenderAddress$ | async}}">
+      {{spenderAddress$ | async}}
+    </a>
+  </div>
+
+  <button class="button" (click)="loadAllowance()">Get allowance</button>
+
+  <div class="result-wrap">
+    <span class="result-label">Allowance: </span>
+    <span *ngIf="allowanceLoadingInProgress" class="result-value">Loading...</span>
+    <span *ngIf="!allowanceLoadingInProgress" class="result-value">{{allowanceAmount$ | async}}</span>
+  </div>
+
+  <button class="button" (click)="setAllowance()">Set allowance</button>
+
+  <div class="result-wrap">
+    <span class="result-label">Tx hash: </span>
+    <a *ngIf="(approveTxHash$ | async) as approveTxHash"
+       target="_blank"
+       [href]="'https://bscscan.com/tx/' + approveTxHash">
+      <span>{{approveTxHash}}</span>
+    </a>
+  </div>
+</div>
