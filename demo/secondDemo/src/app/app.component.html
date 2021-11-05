@@ -2,8 +2,7 @@
   <div class="field-wrap">
     <p class="field-label">Network ID</p>
     <p class="field-value">
-      <span>56&nbsp;-&nbsp;</span>
-      <a class="link" target="_blank" href="https://bscscan.com/">Binance Smart Chain</a>
+      <span>{{networkId$ | async}}&nbsp;-&nbsp;</span> <a class="link">{{networkName$ | async}}</a>
     </p>
   </div>
 
@@ -33,17 +32,20 @@
   <div class="field-wrap">
     <p class="field-label">Place spender contract address (1inch router V3)</p>
     <a class="field-value link" target="_blank"
-       href="https://bscscan.com/address/0x11111112542d85b3ef69ae05771c2dccff4faa26">
-      0x11111112542d85b3ef69ae05771c2dccff4faa26
+       href="https://bscscan.com/address/{{spenderAddress$ | async}}">
+      {{spenderAddress$ | async}}
     </a>
   </div>
 
-  <button class="button" (click)="getAllowance()">Get allowance</button>
+  <button class="button" (click)="loadAllowance()">Get allowance</button>
 
-  <div class="result-wrap" *ngIf="allowanceAmount$ | async">
+  <div class="result-wrap">
     <span class="result-label">Allowance:</span>
-    <span class="result-value">{{allowanceAmount$ | async}}</span>
+    <span *ngIf="allowanceLoadingInProgress" class="result-value">Loading...</span>
+    <span *ngIf="!allowanceLoadingInProgress" class="result-value">{{allowanceAmount$ | async}}</span>
   </div>
 
   <button class="button" (click)="setAllowance()">Set allowance</button>
+
+  <span *ngIf="(approveTxHash$ | async) as approveTxHash">{{approveTxHash}}</span>
 </div>
